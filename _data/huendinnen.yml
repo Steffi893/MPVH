@@ -1,0 +1,12 @@
+- name: "Luna (Moonlight Dancer)"
+  birthday: "12.04.2022"
+  color: "Black and Tan"
+  image: "https://placehold.co/600x600/1a1a1a/D4AF37?text=Luna"
+  description: "Luna ist eine besonders sanftmütige und intelligente Hündin. Sie liebt lange Spaziergänge und Agility."
+
+- name: "Bella (Golden Star)"
+  birthday: "05.08.2023"
+  color: "Apricot"
+  image: "https://placehold.co/600x600/1a1a1a/D4AF37?text=Bella"
+  description: "Bella verzaubert jeden mit ihrem verspielten und aufgeweckten Wesen. Sie lernt unglaublich schnell und ist immer fröhlich."
+

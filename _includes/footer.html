@@ -1,0 +1,20 @@
+<footer>
+    <div class="footer-content">
+        <ul class="footer-links">
+            <li><a href="{{ '/impressum' | relative_url }}">Impressum</a></li>
+            <li><a href="{{ '/datenschutz' | relative_url }}">Datenschutzerklärung</a></li>
+            <li><a href="{{ '/kontakt' | relative_url }}">Kontakt</a></li>
+        </ul>
+        <p class="copyright">
+            &copy; <span id="current-year">{{ site.time | date: '%Y' }}</span> {{ site.title }}. Alle Rechte vorbehalten.
+        </p>
+    </div>
+</footer>
+<script>
+    // Automatisches Copyright-Jahr, falls die Seite im Cache liegt
+    (function() {
+        var el = document.getElementById('current-year');
+        if (el) el.textContent = new Date().getFullYear();
+    })();
+</script>
+

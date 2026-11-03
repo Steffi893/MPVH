@@ -1,0 +1,27 @@
+---
+layout: default
+title: "Startseite"
+description: "Willkommen bei Mittelpudel von Heersberg. Wir züchten gesunde, wesensfeste Mittelpudel in familiärer Atmosphäre."
+---
+
+<section class="hero">
+    <h1>Mittelpudel von Heersberg</h1>
+    <p>Eleganz. Charakter. Leidenschaft.</p>
+    <a href="{{ '/aufzucht' | relative_url }}" class="btn">Zu den Welpen</a>
+</section>
+
+<main class="container">
+    <h2>Aktuelle Neuigkeiten</h2>
+    <div class="news-grid">
+        {% for item in site.data.news %}
+        <article class="news-item">
+            <div class="news-image" style="background-image: url('{{ item.image }}'); background-size: cover; background-position: center;"></div>
+            <div class="news-content">
+                <div class="news-date">{{ item.date }}</div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.text }}</p>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</main>

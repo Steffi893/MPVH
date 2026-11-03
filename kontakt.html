@@ -1,0 +1,58 @@
+---
+layout: default
+title: "Kontakt"
+description: "Nehmen Sie Kontakt mit uns auf. Wir freuen uns auf Ihre Nachricht."
+permalink: /kontakt/
+---
+
+<main class="container">
+    <h1>Kontakt</h1>
+    <p>Haben Sie Fragen zu unserer Zucht oder Interesse an einem Welpen? Schreiben Sie uns gerne eine Nachricht über das Kontaktformular.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin-top: 3rem;">
+
+        <!-- 
+            Kontaktformular via Web3Forms:
+            - Deine persönliche E-Mail-Adresse taucht NICHT im Code auf
+            - Bots können die E-Mail nicht aus dem Quellcode auslesen
+            - Bot-Spamschutz durch Honeypot-Feld ("botcheck")
+        -->
+        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+            <!-- Access Key: Trage deinen Key in _config.yml ein -->
+            <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
+            <input type="hidden" name="subject" value="Neue Anfrage über mittelpudel-von-heersberg.de">
+            <input type="hidden" name="from_name" value="Mittelpudel Website">
+            
+            <!-- Honeypot Spamschutz (versteckt für echte Menschen, fängt Spambots ab) -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none !important">
+
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" required placeholder="ihre-adresse@beispiel.de">
+
+            <label for="phone">Telefon (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="z. B. 0170 1234567">
+
+            <label for="message">Nachricht *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Wie können wir Ihnen helfen? Erzählen Sie uns gerne etwas über sich..."></textarea>
+
+            <button type="submit" class="btn">Nachricht absenden</button>
+            <div id="form-result" style="margin-top: 1rem; display: none;"></div>
+        </form>
+
+        <div class="contact-info">
+            <h3>Unsere Kontaktdaten</h3>
+            <p><strong>{{ site.contact.kennel_name }}</strong></p>
+            <p>{{ site.contact.street }}</p>
+            <p>{{ site.contact.city }}</p>
+            <br>
+            <p><strong>Telefon:</strong> {{ site.contact.phone_display }}</p>
+            <br>
+            <p style="font-size: 0.9rem; color: var(--light-text); line-height: 1.6;">
+                <em>Hinweis zum Spamschutz: Zum Schutz vor automatisierter E-Mail-Werbung und Bots wird unsere E-Mail-Adresse nicht als Text dargestellt. Bitte nutzen Sie direkt das obige Formular – Ihre Nachricht erreicht uns umgehend.</em>
+            </p>
+        </div>
+    </div>
+</main>

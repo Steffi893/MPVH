@@ -1,0 +1,25 @@
+---
+layout: default
+title: "Unsere Hündinnen"
+description: "Lernen Sie unsere wundervollen Mittelpudel-Hündinnen kennen. Wesensfest, gesund und elegant."
+permalink: /huendinnen/
+---
+
+<main class="container">
+    <h1>Unsere Hündinnen</h1>
+    <p>Hier stellen wir Ihnen unsere Zuchthündinnen vor. Sie sind das Herzstück unserer Zucht.</p>
+
+    <div class="news-grid" style="margin-top: 3rem;">
+        {% for hund in site.data.huendinnen %}
+        <div class="news-item">
+            <div class="news-image" style="background-image: url('{{ hund.image }}'); background-size: cover; background-position: center;"></div>
+            <div class="news-content">
+                <h3>{{ hund.name }}</h3>
+                <p><strong>Geboren:</strong> {{ hund.birthday }}</p>
+                <p><strong>Farbe:</strong> {{ hund.color }}</p>
+                <p>{{ hund.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>

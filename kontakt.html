@@ -11,19 +11,11 @@ permalink: /kontakt/
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin-top: 3rem;">
 
-        <!-- 
-            Kontaktformular via Web3Forms:
-            - Deine persönliche E-Mail-Adresse taucht NICHT im Code auf
-            - Bots können die E-Mail nicht aus dem Quellcode auslesen
-            - Bot-Spamschutz durch Honeypot-Feld ("botcheck")
-        -->
         <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
-            <!-- Access Key: Trage deinen Key in _config.yml ein -->
             <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
-            <input type="hidden" name="subject" value="Neue Anfrage über mittelpudel-von-heersberg.de">
-            <input type="hidden" name="from_name" value="Mittelpudel Website">
+            <input type="hidden" name="subject" value="Neue Anfrage über pudel-von-heersberg.de">
+            <input type="hidden" name="from_name" value="Pudel von Heersberg Website">
             
-            <!-- Honeypot Spamschutz (versteckt für echte Menschen, fängt Spambots ab) -->
             <input type="checkbox" name="botcheck" class="hidden" style="display:none !important">
 
             <label for="name">Name *</label>

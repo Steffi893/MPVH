@@ -1,15 +1,23 @@
 - title: "Wurfplanung Frühjahr 2026"
   date: "15. Januar 2026"
   image: "https://placehold.co/600x400/1a1a1a/D4AF37?text=Wurfplanung"
+  gallery:
+    - "https://placehold.co/800x600/1a1a1a/D4AF37?text=Wurfplanung+Bild+1"
+    - "https://placehold.co/800x600/222222/D4AF37?text=Wurfplanung+Bild+2"
+    - "https://placehold.co/800x600/333333/D4AF37?text=Wurfplanung+Bild+3"
   text: "Wir planen unseren nächsten Wurf für das Frühjahr 2026. Bei Interesse nehmen Sie bitte rechtzeitig Kontakt auf."
 
 - title: "Erfolg auf der Bundessieger-Ausstellung"
   date: "02. September 2025"
   image: "https://placehold.co/600x400/1a1a1a/D4AF37?text=Ausstellungserfolg"
+  gallery:
+    - "https://placehold.co/800x600/1a1a1a/D4AF37?text=Ausstellungserfolg+1"
+    - "https://placehold.co/800x600/222222/D4AF37?text=Urkunde+und+Pokal"
   text: "Unsere Hündin hat auf der Ausstellung den ersten Platz belegt. Wir sind unglaublich stolz!"
 
 - title: "Start der Welpenschule"
   date: "20. August 2025"
   image: "https://placehold.co/600x400/1a1a1a/D4AF37?text=Welpenschule"
+  gallery:
+    - "https://placehold.co/800x600/1a1a1a/D4AF37?text=Welpenschule+Spielstunde"
   text: "Die Kleinen aus unserem letzten Wurf machen ihre ersten Schritte in der Welpenschule und lernen fleißig."
-

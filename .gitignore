@@ -4,5 +4,11 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
+.active_port
 verification/
+admin/
+editor.py
+start-editor.command
+"Mittelpudel Studio starten.command"
+*.command
 

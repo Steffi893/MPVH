@@ -1,10 +1,10 @@
-# Mittelpudel von Heersberg 🐩
+# Pudel von Heersberg
 
-Offizielle Website für die Mittelpudelzucht **Mittelpudel von Heersberg**, gehostet auf **GitHub Pages** unter [mittelpudel-von-heersberg.de](https://mittelpudel-von-heersberg.de).
+Offizielle Website für die Pudelzucht **Pudel von Heersberg**, gehostet auf **GitHub Pages** unter [pudel-von-heersberg.de](https://pudel-von-heersberg.de).
 
 ---
 
-## 🚀 Architektur & Besonderheiten
+## Architektur & Besonderheiten
 
 1. **GitHub Pages & Jekyll-basiert**:
    - Blitzschnelle Ladezeiten durch statische HTML/CSS-Auslieferung über das weltweite GitHub CDN.
@@ -20,29 +20,26 @@ Offizielle Website für die Mittelpudelzucht **Mittelpudel von Heersberg**, geho
    - Ausgestattet mit einem Honeypot-Feld zum automatischen Verwerfen von Spambots.
 5. **Keine sensiblen Daten im Repo**:
    - `.gitignore` schließt temporäre und sensible Dateien aus.
-   - `CNAME` ist auf `mittelpudel-von-heersberg.de` konfiguriert.
+   - `CNAME` ist auf `pudel-von-heersberg.de` konfiguriert.
 
 ---
 
-## ✍️ Inhalte bearbeiten (Auch ohne Programmierkenntnisse!)
+## Inhalte bearbeiten (Auch ohne Programmierkenntnisse!)
 
-### Option A: Grafische Tools auf dem lokalen Rechner (Empfohlen)
+### Grafische Umgebung auf dem lokalen Rechner
 
-Für Personen ohne Code-Erfahrung eignen sich hervorragend:
+Auf dem Schreibtisch oder im Projektordner liegt die Datei `Mittelpudel Studio starten.command`.
+Ein Doppelklick öffnet das **Studio** im Browser:
 
-1. **Obsidian / MarkText / Typora (Kostenlose Markdown-Editoren)**:
-   - Öffne einfach den Projektordner.
-   - Texte und Daten können wie in Microsoft Word / Apple Pages geschrieben werden.
-   - Änderungen speichern und mit **GitHub Desktop** mit einem Klick auf "Commit" & "Push" online bringen.
-2. **GitHub Desktop (Sehr einfach)**:
-   - Grafisches Programm von GitHub für Mac & Windows.
-   - Zeigt geänderte Dateien an. Ein Klick auf "Commit to main" und "Push origin" aktualisiert die Website automatisch!
-3. **Direkt im Browser auf GitHub.com**:
-   - Man kann jede Datei (z. B. `_data/news.yml` oder Texte) direkt auf GitHub.com mit Stift-Symbol im Browser editieren. GitHub Pages baut die Seite in ca. 30 Sekunden neu.
+- **Live-Vorschau**: Die komplette Website live ansehen und zwischen Desktop-, Tablet- und Handy-Ansicht umschalten.
+- **Farben & Typografie**: Visuelle Farbwähler und Schriftenauswahl.
+- **Hündinnen & News**: Fotos direkt hochladen und Texte anpassen.
+- **Seiten-Texte & Rechtliches**: Impressum, Datenschutz und alle Seiteninhalte direkt im Editor bearbeiten.
+- **Website veröffentlichen**: Mit Sicherheitswarnung und Statusmeldung direkt zu GitHub pushen.
 
 ---
 
-### Wo bearbeite ich was?
+### Wo liegen welche Daten im Repo?
 
 * **Neuigkeiten auf der Startseite**: Datei `_data/news.yml`
 * **Hündinnen**: Datei `_data/huendinnen.yml`
@@ -59,23 +56,23 @@ Für Personen ohne Code-Erfahrung eignen sich hervorragend:
 
 ---
 
-## 📬 Kontaktformular aktivieren (In 2 Minuten)
+## Kontaktformular aktivieren (In 2 Minuten)
 
 Das Kontaktformular nutzt **Web3Forms** (kostenlos):
 
 1. Gehe auf [web3forms.com](https://web3forms.com/) und gib deine Ziel-E-Mail-Adresse ein, an die Anfragen gesendet werden sollen.
-2. Du erhältst sofort per E-Mail einen persönlichen `Access Key` (z. B. `a1b2c3d4-xxxx-xxxx-xxxx-xxxxxxxxxxxx`).
+2. Du erhältst sofort per E-Mail einen persönlichen `Access Key`.
 3. Trage diesen Schlüssel in der Datei `_config.yml` bei `web3forms_access_key:` ein:
    ```yaml
    web3forms_access_key: "DEIN_ERHALTENER_KEY"
    ```
-4. Fertig! Ab jetzt leitet das Formular alle Anfragen direkt an dein Postfach weiter – absolut anonym und ohne E-Mail-Klartext im Internet.
+4. Fertig! Ab jetzt leitet das Formular alle Anfragen direkt an dein Postfach weiter.
 
 ---
 
-## 🌐 GitHub Pages aktivieren
+## GitHub Pages aktivieren
 
 1. Repository auf GitHub pushen.
 2. Im Repository auf **Settings** -> **Pages** gehen.
-3. Unter **Build and deployment** -> **Source** wählen: `GitHub Actions` (der beiliegende Workflow `.github/workflows/deploy.yml` baut die Seite automatisch).
-4. Unter **Custom domain** steht `mittelpudel-von-heersberg.de` bereits durch die `CNAME`-Datei fest. "Enforce HTTPS" aktivieren.
+3. Unter **Build and deployment** -> **Source** wählen: `GitHub Actions`.
+4. Unter **Custom domain** steht `pudel-von-heersberg.de` durch die `CNAME`-Datei fest. "Enforce HTTPS" aktivieren.

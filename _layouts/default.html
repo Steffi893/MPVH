@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title and page.url != '/' %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} - Edle & Moderne Zucht{% endif %}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="robots" content="noimageindex">
+    <meta name="googlebot" content="noimageindex">
     <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

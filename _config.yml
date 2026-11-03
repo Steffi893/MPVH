@@ -1,21 +1,19 @@
-title: "Mittelpudel von Heersberg"
-description: "Liebevolle Mittelpudelzucht – Gesunde, wesensfeste und elegante Mittelpudel in familiärer Aufzucht."
-url: "https://mittelpudel-von-heersberg.de"
+title: "Pudel von Heersberg"
+description: "Liebevolle Pudelzucht – Gesunde, wesensfeste und elegante Pudel in familiärer Aufzucht."
+url: "https://pudel-von-heersberg.de"
 baseurl: ""
 
 # Kontaktdaten (Öffentlich auf der Seite angezeigt)
 contact:
-  kennel_name: "Mittelpudel von Heersberg"
+  kennel_name: "Pudel von Heersberg"
   owner_name: "Stephanie Horz"
   street: "Musterstraße 123"
   city: "12345 Musterstadt"
   phone: "0123 456789"
   phone_display: "+49 (0) 123 456789"
 
-# Kontaktformular via Web3Forms (Kostenlos, ohne Registrierung startbar mit Access Key)
-# Der Access-Key leitet E-Mails sicher an deine hinterlegte E-Mail-Adresse weiter.
-# Deine persönliche E-Mail-Adresse taucht NIEMALS im Quellcode oder im GitHub Repo auf!
-web3forms_access_key: "DEIN_WEB3FORMS_ACCESS_KEY"
+# Kontaktformular via Web3Forms
+web3forms_access_key: "b7eeed27-c25a-4ffd-9763-54abb6531098"
 
 # Navigation
 navigation:
@@ -39,4 +37,3 @@ exclude:
   - verification/
   - Gemfile
   - Gemfile.lock
-

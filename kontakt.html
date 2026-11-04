@@ -10,9 +10,11 @@ permalink: /kontakt/
 
 <main class="container">
     <h1>Kontakt</h1>
-    <p>Haben Sie Fragen zu unserer Zucht oder Interesse an einem Welpen? Schreiben Sie uns gerne eine Nachricht über das Kontaktformular.</p>
+    <p>Haben Sie Fragen zu unserer Zucht oder Interesse an einem Welpen? Schreiben Sie uns gerne eine Nachricht über das
+        Kontaktformular.</p>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin-top: 3rem;">
+    <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin-top: 3rem;">
 
         <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
             <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
@@ -33,7 +35,8 @@ permalink: /kontakt/
             <input type="tel" id="phone" name="phone" placeholder="z. B. 0170 1234567">
 
             <label for="message">Nachricht *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Wie können wir Ihnen helfen? Erzählen Sie uns gerne etwas über sich..."></textarea>
+            <textarea id="message" name="message" rows="5" required
+                placeholder="Wie können wir Ihnen helfen? Erzählen Sie uns gerne etwas über sich..."></textarea>
 
             <!-- hCaptcha Spamschutz – wird automatisch von web3forms/client/script.js befüllt -->
             <div class="h-captcha" data-captcha="true" style="margin-top: 1.5rem;"></div>
@@ -45,66 +48,68 @@ permalink: /kontakt/
 
         <div class="contact-info">
             <h3>Unsere Kontaktdaten</h3>
-            <p><strong>{{ site.contact.kennel_name }}</strong></p>
+            <p><strong>Alemennenstraße</strong></p>
             <p>{{ site.contact.street }}</p>
             <p>{{ site.contact.city }}</p>
             <br>
             <p><strong>Telefon:</strong> {{ site.contact.phone_display }}</p>
             <br>
             <p style="font-size: 0.9rem; color: var(--light-text); line-height: 1.6;">
-                <em>Hinweis zum Spamschutz: Zum Schutz vor automatisierter E-Mail-Werbung und Bots wird unsere E-Mail-Adresse nicht als Text dargestellt. Bitte nutzen Sie direkt das obige Formular – Ihre Nachricht erreicht uns umgehend.</em>
+                <em>Hinweis zum Spamschutz: Zum Schutz vor automatisierter E-Mail-Werbung und Bots wird unsere
+                    E-Mail-Adresse nicht als Text dargestellt. Bitte nutzen Sie direkt das obige Formular – Ihre
+                    Nachricht erreicht uns umgehend.</em>
             </p>
         </div>
     </div>
 </main>
 
 <script>
-(function () {
-    var form = document.getElementById('contact-form');
-    var result = document.getElementById('form-result');
+    (function () {
+        var form = document.getElementById('contact-form');
+        var result = document.getElementById('form-result');
 
-    if (!form) return;
+        if (!form) return;
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var btn = form.querySelector('button[type="submit"]');
-        btn.disabled = true;
-        btn.textContent = 'Wird gesendet...';
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var btn = form.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Wird gesendet...';
 
-        var data = new FormData(form);
+            var data = new FormData(form);
 
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: data
-        })
-        .then(function (res) { return res.json(); })
-        .then(function (json) {
-            result.style.display = 'block';
-            if (json.success) {
-                result.style.background = 'rgba(80,160,80,0.15)';
-                result.style.border = '1px solid rgba(80,160,80,0.4)';
-                result.style.color = '#a8d8a8';
-                result.textContent = 'Vielen Dank! Ihre Nachricht ist bei uns angekommen. Wir melden uns in Kürze.';
-                form.reset();
-                if (window.hcaptcha) window.hcaptcha.reset();
-            } else {
-                result.style.background = 'rgba(180,60,60,0.15)';
-                result.style.border = '1px solid rgba(180,60,60,0.4)';
-                result.style.color = '#f4a4a4';
-                result.textContent = 'Fehler beim Senden: ' + (json.message || 'Bitte versuchen Sie es erneut.');
-            }
-            btn.disabled = false;
-            btn.textContent = 'Nachricht absenden';
-        })
-        .catch(function () {
-            result.style.display = 'block';
-            result.style.background = 'rgba(180,60,60,0.15)';
-            result.style.border = '1px solid rgba(180,60,60,0.4)';
-            result.style.color = '#f4a4a4';
-            result.textContent = 'Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung.';
-            btn.disabled = false;
-            btn.textContent = 'Nachricht absenden';
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data
+            })
+                .then(function (res) { return res.json(); })
+                .then(function (json) {
+                    result.style.display = 'block';
+                    if (json.success) {
+                        result.style.background = 'rgba(80,160,80,0.15)';
+                        result.style.border = '1px solid rgba(80,160,80,0.4)';
+                        result.style.color = '#a8d8a8';
+                        result.textContent = 'Vielen Dank! Ihre Nachricht ist bei uns angekommen. Wir melden uns in Kürze.';
+                        form.reset();
+                        if (window.hcaptcha) window.hcaptcha.reset();
+                    } else {
+                        result.style.background = 'rgba(180,60,60,0.15)';
+                        result.style.border = '1px solid rgba(180,60,60,0.4)';
+                        result.style.color = '#f4a4a4';
+                        result.textContent = 'Fehler beim Senden: ' + (json.message || 'Bitte versuchen Sie es erneut.');
+                    }
+                    btn.disabled = false;
+                    btn.textContent = 'Nachricht absenden';
+                })
+                .catch(function () {
+                    result.style.display = 'block';
+                    result.style.background = 'rgba(180,60,60,0.15)';
+                    result.style.border = '1px solid rgba(180,60,60,0.4)';
+                    result.style.color = '#f4a4a4';
+                    result.textContent = 'Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung.';
+                    btn.disabled = false;
+                    btn.textContent = 'Nachricht absenden';
+                });
         });
-    });
-})();
+    })();
 </script>

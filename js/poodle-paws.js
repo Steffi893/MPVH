@@ -37,7 +37,7 @@
 
     // --- 3. Tatzen-Design & Größe ---
     pawBaseScale: 0.85,          // Grundgröße (0.6 = Zwergpudel, 0.85 = Kleinpudel, 1.15 = Königspudel)
-    showClaws: true,             // Zarte, gepflegte Krallenspitzen anzeigen (true / false)
+    showClaws: false,             // Zarte, gepflegte Krallenspitzen anzeigen (true / false)
 
     // --- 4. Aussehen, Gold-Farbe & Glanz ---
     goldColor: '#cbb776ff',        // Primäre Goldfarbe (edles Königs-Gold)

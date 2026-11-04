@@ -5,6 +5,9 @@ description: "Nehmen Sie Kontakt mit uns auf. Wir freuen uns auf Ihre Nachricht.
 permalink: /kontakt/
 ---
 
+<!-- Web3Forms Client Script (muss vor dem Formular geladen sein) -->
+<script src="https://web3forms.com/client/script.js" async defer></script>
+
 <main class="container">
     <h1>Kontakt</h1>
     <p>Haben Sie Fragen zu unserer Zucht oder Interesse an einem Welpen? Schreiben Sie uns gerne eine Nachricht über das Kontaktformular.</p>
@@ -15,7 +18,9 @@ permalink: /kontakt/
             <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
             <input type="hidden" name="subject" value="Neue Anfrage über pudel-von-heersberg.de">
             <input type="hidden" name="from_name" value="Pudel von Heersberg Website">
-            
+            <input type="hidden" name="redirect" value="false">
+
+            <!-- Honeypot Bot-Schutz -->
             <input type="checkbox" name="botcheck" class="hidden" style="display:none !important">
 
             <label for="name">Name *</label>
@@ -30,14 +35,13 @@ permalink: /kontakt/
             <label for="message">Nachricht *</label>
             <textarea id="message" name="message" rows="5" required placeholder="Wie können wir Ihnen helfen? Erzählen Sie uns gerne etwas über sich..."></textarea>
 
-            <!-- hCaptcha Spamschutz (im Web3Forms Dashboard aktiviert) -->
-            <div class="h-captcha" data-captcha="true" style="margin-top: 1rem;"></div>
+            <!-- hCaptcha Spamschutz – wird automatisch von web3forms/client/script.js befüllt -->
+            <div class="h-captcha" data-captcha="true" style="margin-top: 1.5rem;"></div>
 
-            <button type="submit" class="btn" style="margin-top: 1rem;">Nachricht absenden</button>
-            <div id="form-result" style="margin-top: 1rem; display: none;"></div>
+            <button type="submit" class="btn" style="margin-top: 1.5rem;">Nachricht absenden</button>
+
+            <div id="form-result" style="margin-top: 1rem; padding: 1rem; border-radius: 6px; display: none;"></div>
         </form>
-
-        <script src="https://web3forms.com/client/script.js" async defer></script>
 
         <div class="contact-info">
             <h3>Unsere Kontaktdaten</h3>
@@ -53,3 +57,54 @@ permalink: /kontakt/
         </div>
     </div>
 </main>
+
+<script>
+(function () {
+    var form = document.getElementById('contact-form');
+    var result = document.getElementById('form-result');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Wird gesendet...';
+
+        var data = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: data
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+            result.style.display = 'block';
+            if (json.success) {
+                result.style.background = 'rgba(80,160,80,0.15)';
+                result.style.border = '1px solid rgba(80,160,80,0.4)';
+                result.style.color = '#a8d8a8';
+                result.textContent = 'Vielen Dank! Ihre Nachricht ist bei uns angekommen. Wir melden uns in Kürze.';
+                form.reset();
+                if (window.hcaptcha) window.hcaptcha.reset();
+            } else {
+                result.style.background = 'rgba(180,60,60,0.15)';
+                result.style.border = '1px solid rgba(180,60,60,0.4)';
+                result.style.color = '#f4a4a4';
+                result.textContent = 'Fehler beim Senden: ' + (json.message || 'Bitte versuchen Sie es erneut.');
+            }
+            btn.disabled = false;
+            btn.textContent = 'Nachricht absenden';
+        })
+        .catch(function () {
+            result.style.display = 'block';
+            result.style.background = 'rgba(180,60,60,0.15)';
+            result.style.border = '1px solid rgba(180,60,60,0.4)';
+            result.style.color = '#f4a4a4';
+            result.textContent = 'Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung.';
+            btn.disabled = false;
+            btn.textContent = 'Nachricht absenden';
+        });
+    });
+})();
+</script>

@@ -30,9 +30,14 @@ permalink: /kontakt/
             <label for="message">Nachricht *</label>
             <textarea id="message" name="message" rows="5" required placeholder="Wie können wir Ihnen helfen? Erzählen Sie uns gerne etwas über sich..."></textarea>
 
-            <button type="submit" class="btn">Nachricht absenden</button>
+            <!-- hCaptcha Spamschutz (im Web3Forms Dashboard aktiviert) -->
+            <div class="h-captcha" data-captcha="true" style="margin-top: 1rem;"></div>
+
+            <button type="submit" class="btn" style="margin-top: 1rem;">Nachricht absenden</button>
             <div id="form-result" style="margin-top: 1rem; display: none;"></div>
         </form>
+
+        <script src="https://web3forms.com/client/script.js" async defer></script>
 
         <div class="contact-info">
             <h3>Unsere Kontaktdaten</h3>

@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-poodle-paws>
 
     {% include header.html %}
 
@@ -20,6 +20,7 @@
 
     {% include footer.html %}
 
+    <script src="{{ '/js/poodle-paws.js' | relative_url }}"></script>
     <script src="{{ '/js/script.js' | relative_url }}"></script>
 </body>
 </html>

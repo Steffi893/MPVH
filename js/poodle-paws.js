@@ -41,7 +41,7 @@
 
     // --- 4. Aussehen, Gold-Farbe & Glanz ---
     goldColor: '#cbb776ff',        // Primäre Goldfarbe (edles Königs-Gold)
-    goldHighlight: '#d9cd92ff',    // Glanzpunkt auf den Ballen
+    goldHighlight: '#5a5439ff',    // Glanzpunkt auf den Ballen
     goldShadow: '#8b6914',       // Warme Schattierung für Tiefe
     glowColor: 'rgba(212, 175, 55, 0.32)', // Farbe des sanften Scheins
     glowBlur: 10,                // Weichzeichner des Scheins in px (0 = aus, dezent = 8-12)
